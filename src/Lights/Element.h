@@ -17,7 +17,7 @@ class Element{
 public:
     
     //Constructor - destructor
-    Element();
+    Element(string order);
     ~Element();
     
     
@@ -31,6 +31,8 @@ public:
     
     
     //Attributes
+    string name;
+    
     int numCh;
     
     int iR;
@@ -48,9 +50,7 @@ public:
     
     
     
-    
     //Methods
-    void setup(string order);
     vector<int> getInfo(){return data;};
     
     

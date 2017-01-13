@@ -14,6 +14,9 @@
 #include "ofxArtNet.h"
 
 
+// qui crea els grups i els te com a vector es LightManager pero des d'ofapp se li diu com han de ser. La jerarquia es: LightManager-->Groups-->Elements
+
+
 class LightManager{
 public:
     
@@ -23,8 +26,12 @@ public:
     
     
     
+    string machineIP;
+    string enttecIP;
+    
+    
     void setup();
-    void obtainGroupsDmx();
+    void obtainGroupsInfo();
     
     //Artnet
     void setupArtnet();
@@ -34,7 +41,7 @@ public:
 private:
 
     ofxArtNet artnet;
-    vector<unsigned char> dmxDataPacket;
+    vector<int> dmxDataPacket;
     
     
 };

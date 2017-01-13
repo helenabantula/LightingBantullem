@@ -11,4 +11,8 @@
 
 #include <stdio.h>
 
-#endif /* LightManager_hpp */
+
+
+
+
+#endif /* LightManager_h */

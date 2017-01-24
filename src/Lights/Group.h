@@ -12,6 +12,18 @@
 #include <stdio.h>
 #include "ofMain.h"
 
+class Group{
+public:
+    
+    //Constructor - destructor
+    Group();
+    ~Group();
+    
+    
+};
+
+
+
 
 
 

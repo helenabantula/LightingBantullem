@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 #include "Group.h"
-
+#include "ArtnetSender.h"
 
 
 
@@ -33,7 +33,7 @@ public:
     void setup();
     void update();
     
-    void changeGroupState(enum state);
+    void changeGroupState(string state);
     
     
 private:

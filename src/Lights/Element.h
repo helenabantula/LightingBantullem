@@ -17,6 +17,7 @@ class Element{
 public:
     
     //Constructor - destructor
+    Element();
     Element(string order);
     ~Element();
     

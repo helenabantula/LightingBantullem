@@ -11,4 +11,40 @@
 
 #include <stdio.h>
 
+#include "Group.h"
+
+
+
+
+class LightManager{
+public:
+
+    vector<Group> groups;
+    
+    ArtnetSender sender;
+    
+    vector<unsigned char> dmxDataPacket;
+
+    
+    //Constructor - destructor
+    LightManager();
+    ~LightManager();
+    
+    void setup();
+    void update();
+    
+    void changeGroupState(enum state);
+    
+    
+private:
+    
+    
+
+    
+};
+
+
+
 #endif /* LightManager_hpp */
+
+

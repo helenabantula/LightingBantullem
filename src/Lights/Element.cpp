@@ -12,7 +12,7 @@
 Element::Element(string order)
 {
     
-    numCh = order.lenght();
+    numCh = order.length();
     
     switch (std::stoi (order,nullptr,0)) {
             
@@ -29,7 +29,7 @@ Element::Element(string order)
             iR = 0;
             iG = 1;
             iB = 2;
-            iB = 3;
+            iW = 3;
 
         break;
             
@@ -45,7 +45,7 @@ Element::Element(string order)
             iG = 1;
             iB = 2;
             iW = 3;
-            iW = 4;
+            iS = 4;
             iI = 5;
             iP = 6;
             iT = 7;

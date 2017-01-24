@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    Element myElement("rgb");
+   //myElement = new Element("rgb");
 
 }
 

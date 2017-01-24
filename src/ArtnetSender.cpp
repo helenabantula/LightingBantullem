@@ -22,10 +22,8 @@ void ArtnetSender::setup() {
     
 }
 
-void ArtnetSender::sendDmx() {
-    arnet.sendDmx(int port, const char* targetIp, dmxDataPacket, int size);     //falta omplir!
-    //port = 0
-    //targetIp = enttec
-    //size = 512
+void ArtnetSender::sendDmx(dmxData vector <unsigned char>) {
     
+    arnet.sendDmx(int port = 0, enttecIP, dmxData, int size = 512);
+
 }

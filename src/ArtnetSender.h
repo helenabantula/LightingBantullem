@@ -18,11 +18,11 @@ class ArtnetSender{
     public:
     
         string machineIP;
-        string enttecIP;
+        string enttecIP;        // ho hauré de convertir a punter de char (*char)
     
         //Constructor - destructor
-        ArtnetSender();
-        ~ArtnetSender();
+    ArtnetSender(){};
+    ~ArtnetSender(){};
     
         void setup();
         void sendDmx(vector<unsigned char> dmxData);

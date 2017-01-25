@@ -16,14 +16,17 @@ void ArtnetSender::setup() {
     artnet.setPortType(0, ARTNET_PORT_ENABLE_INPUT, ARTNET_DATA_DMX);
     artnet.setPortAddress(0, ARTNET_PORT_INPUT, 0);
     
-    ofAddListener(artnet.pollReply, this, &PMArtNetManager::receivePollReply);
-    artnet.sendPoll();
+    // Si no em troba el node, puc mirar quants elements artnet hi ha fent un ping.
+    
     artnet.start();
     
 }
 
-void ArtnetSender::sendDmx(dmxData vector <unsigned char>) {
+void ArtnetSender::sendDmx(vector <unsigned char> dmxData ) {
+    int size = 512;
+    int port = 0;
+    artnet.sendDmx(port, enttecIP.c_str(), dmxData.data(), size);       //transformar vector a punter: posarhi ".data()"
+                                                                         //transformar string a punter de char: ".c_str()"
     
-    arnet.sendDmx(int port = 0, enttecIP, dmxData, int size = 512);
 
 }

@@ -16,8 +16,8 @@ class Group{
 public:
     
     //Constructor - destructor
-    Group();
-    ~Group();
+    Group(){};
+    ~Group(){};
     
     
 };

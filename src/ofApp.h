@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Lights/LightManager.h"
+#include "LightManager.h"
 
 
 class ofApp : public ofBaseApp{

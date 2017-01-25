@@ -28,8 +28,8 @@ public:
 
     
     //Constructor - destructor
-    LightManager();
-    ~LightManager();
+    LightManager(){};
+    ~LightManager(){};
     
     void setup();
     void update();

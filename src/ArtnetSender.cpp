@@ -16,7 +16,7 @@ void ArtnetSender::setup() {
     artnet.setPortType(0, ARTNET_PORT_ENABLE_INPUT, ARTNET_DATA_DMX);
     artnet.setPortAddress(0, ARTNET_PORT_INPUT, 0);
     
-    // Si no em troba el node, puc mirar quants elements artnet hi ha fent un ping.
+    // Si no em troba el node, puc mirar quants elements artnet hi ha fent un ping.... tros de codi de PollRequest etc
     
     artnet.start();
     

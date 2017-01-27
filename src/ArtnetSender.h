@@ -21,8 +21,8 @@ class ArtnetSender{
         string enttecIP;        // ho haur de convertir a punter de char (*char)
     
         //Constructor - destructor
-    ArtnetSender(){};
-    ~ArtnetSender(){};
+        ArtnetSender(){};
+        ~ArtnetSender(){};
     
         void setup();
         void sendDmx(vector<unsigned char> dmxData);

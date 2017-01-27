@@ -14,45 +14,46 @@
 
 
 class Element{
-public:
+    public:
     
-    //Constructor - destructor
-    Element();
-    Element(string order);
-    ~Element();
-    
-    
-    
-    //State
-    enum state{
-        STATE_QUIET,
-        STATE_STROBO,
-        STATE_FADE
-    };
+        //Constructor - destructor
+        Element();
+        Element(string order);
+        ~Element();
     
     
-    //Attributes
-    string name;
     
-    int numCh;
+        //State
+        enum state{
+            STATE_QUIET,
+            STATE_STROBO,
+            STATE_FADE
+        };
     
-    int iR;
-    int iG;
-    int iB;
-    int iW;
     
-    int iS;     //strobo
-    int iI;     //intensity
+        //Attributes
+        string name;
+    
+        int numCh;
+    
+        unsigned char* r;
+        unsigned char* g;
+        unsigned char* b;
+        unsigned char* a;
+        unsigned char* w;
+    
+        unsigned char* s;     //strobo
+        unsigned char* i;     //intensity
 
-    int iP;     //pan
-    int iT;     //tilt
+        unsigned char* p;     //pan
+        unsigned char* t;     //tilt
     
-    vector<int> data;   //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
+        vector<unsigned char> data;   //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
     
     
     
-    //Methods
-    vector<int> getInfo(){return data;};
+        //Methods
+        vector<unsigned char> getInfo(){return data;};
     
     
 };

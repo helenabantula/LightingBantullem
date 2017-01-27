@@ -14,48 +14,30 @@ Element::Element(string order)
     
     numCh = order.length();
     
-//    switch (std::stoi (order,nullptr,0)) {
-//            
-//        case std::stoi ("rgb",nullptr,0):
-//            
-//            iR = 0;
-//            iG = 1;
-//            iB = 2;
-//            
-//        break;
-//            
-//        case std::stoi ("rgbw",nullptr,0):
-//            
-//            iR = 0;
-//            iG = 1;
-//            iB = 2;
-//            iW = 3;
-//
-//        break;
-//            
-//        case std::stoi ("I",nullptr,0):
-//            
-//            iI = 0;
-//            
-//        break;
-//            
-//        case std::stoi ("rgbwsipt",nullptr,0):
-//            
-//            iR = 0;
-//            iG = 1;
-//            iB = 2;
-//            iW = 3;
-//            iS = 4;
-//            iI = 5;
-//            iP = 6;
-//            iT = 7;
-//            
-//        break;
-//            
-//        default:
-//            
-//            iI = 0;
-//
-//        break;
-//    }
+    int pos = order.find('R');
+    r = &data[pos];
+    
+    pos = order.find('G');
+    g = &data[pos];
+    
+    pos = order.find('B');
+    b = &data[pos];
+    
+    pos = order.find('A');
+    a = &data[pos];
+    
+    pos = order.find('W');
+    w = &data[pos];
+    
+    pos = order.find('S');
+    s = &data[pos];
+    
+    pos = order.find('I');
+    i = &data[pos];
+    
+    pos = order.find('P');
+    p = &data[pos];
+    
+    pos = order.find('T');
+    t = &data[pos];
 }

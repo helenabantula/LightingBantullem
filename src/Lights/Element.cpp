@@ -13,6 +13,7 @@ void Element::setup(string order)
 {
     numCh = order.length();
     data.resize(numCh,0);
+    data[0] = 200;
     
     int pos = order.find('R');
     

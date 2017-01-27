@@ -15,7 +15,7 @@ void Group::AddElement(string order, int number)
     // no permet elements de diferents tipus
     elements.resize(number);
 
-    for (int i = 0; i <= number; i ++) {
+    for (int i = 0; i < number; i ++) {
         elements[i].setup(order);
     }
 }

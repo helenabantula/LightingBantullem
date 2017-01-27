@@ -11,33 +11,49 @@
 
 Element::Element(string order)
 {
-    
     numCh = order.length();
     
+    data.resize(numCh,0);
+    
+    data[0] = 1;
+    data[1] = 4;
+    data[2] = 8;
+
+    
     int pos = order.find('R');
-    r = &data[pos];
+    
+    if (pos>=0)
+        r = &data[pos];
     
     pos = order.find('G');
-    g = &data[pos];
+    if (pos>=0)
+        g = &data[pos];
     
     pos = order.find('B');
-    b = &data[pos];
+    if (pos>=0)
+        b = &data[pos];
     
     pos = order.find('A');
-    a = &data[pos];
+    if (pos>=0)
+        a = &data[pos];
     
     pos = order.find('W');
-    w = &data[pos];
+    if (pos>=0)
+        w = &data[pos];
     
     pos = order.find('S');
-    s = &data[pos];
+    if (pos>=0)
+        s = &data[pos];
     
     pos = order.find('I');
-    i = &data[pos];
+    if (pos>=0)
+        i = &data[pos];
     
     pos = order.find('P');
-    p = &data[pos];
+    if (pos>=0)
+        p = &data[pos];
     
     pos = order.find('T');
-    t = &data[pos];
+    if (pos>=0)
+        t = &data[pos];
 }

@@ -9,7 +9,10 @@
 #include "Group.h"
 
 
-void AddElement( string order)
+void Group::AddElement(string order)
 {
-
+    
+    Element myElement(order);
+    
+    
 }

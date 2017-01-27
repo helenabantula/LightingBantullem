@@ -37,6 +37,7 @@ public:
     void changeGroupState(string state);
     
     
+    
 private:
     
     

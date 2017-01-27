@@ -18,7 +18,7 @@ class ArtnetSender{
     public:
     
         string machineIP;
-        string enttecIP;        // ho haur de convertir a punter de char (*char)
+        string enttecIP;        // ho haure de convertir a punter de char (*char)
     
         //Constructor - destructor
         ArtnetSender(){};

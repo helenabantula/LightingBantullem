@@ -8,6 +8,8 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    manager.update();
 
 }
 

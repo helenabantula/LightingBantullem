@@ -9,16 +9,10 @@
 #include "Element.h"
 
 
-Element::Element(string order)
+void Element::setup(string order)
 {
     numCh = order.length();
-    
     data.resize(numCh,0);
-    
-    data[0] = 1;
-    data[1] = 4;
-    data[2] = 8;
-
     
     int pos = order.find('R');
     

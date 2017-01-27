@@ -18,8 +18,8 @@ class Element{
     
         //Constructor - destructor
         Element(){};
-        Element(string order);
         ~Element(){};
+        void setup(string order);
     
     
     
@@ -36,17 +36,17 @@ class Element{
     
         int numCh;
     
-        unsigned char* r;
-        unsigned char* g;
-        unsigned char* b;
-        unsigned char* a;
-        unsigned char* w;
+        unsigned char* r = 0;
+        unsigned char* g = 0;
+        unsigned char* b = 0;
+        unsigned char* a = 0;
+        unsigned char* w = 0;
     
-        unsigned char* s;     //strobo
-        unsigned char* i;     //intensity
+        unsigned char* s = 0;     //strobo
+        unsigned char* i = 0;     //intensity
 
-        unsigned char* p;     //pan
-        unsigned char* t;     //tilt
+        unsigned char* p = 0;     //pan
+        unsigned char* t = 0;     //tilt
     
         vector<unsigned char> data;   //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
     

@@ -22,8 +22,13 @@ public:
     ~Group(){};
     
     vector<Element> elements;
+    int initChannel = 0;
+    vector<unsigned char> groupData;
     
-    void AddElement(string order);
+    
+    void AddElement(string order, int number);
+    vector<unsigned char> getGroupData();
+    void setInitChannel(int initChannel_);
     
     
     

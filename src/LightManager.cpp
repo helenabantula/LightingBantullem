@@ -9,3 +9,7 @@
 #include "LightManager.h"
 
 
+void LightManager::setup()
+{
+    //TO DO?? fer setup de grups i elements amb fitxer extern XML/JSON
+}

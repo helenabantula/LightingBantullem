@@ -7,3 +7,9 @@
 //
 
 #include "Group.h"
+
+
+void AddElement( string order)
+{
+
+}

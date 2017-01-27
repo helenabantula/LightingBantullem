@@ -12,12 +12,21 @@
 #include <stdio.h>
 #include "ofMain.h"
 
+#include "Element.h"
+
 class Group{
 public:
     
     //Constructor - destructor
     Group(){};
     ~Group(){};
+    
+    vector<Element> elements;
+    
+    void AddElement(string order);
+    
+    
+    
     
     
 };

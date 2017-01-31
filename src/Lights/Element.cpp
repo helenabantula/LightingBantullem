@@ -17,7 +17,6 @@ void Element::setup(string order)
     data[0] = 200;          //per poder distingir quan comeno un nou element al vector DMX de tothom (a LightManager)
     
     int pos = order.find('R');
-    
     if (pos>=0)
         r = &data[pos];
     
@@ -46,10 +45,12 @@ void Element::setup(string order)
         i = &data[pos];
     
     pos = order.find('P');
-    if (pos>=0)
+    if (pos>=0) {
         p = &data[pos];
+    }
     
     pos = order.find('T');
     if (pos>=0)
         t = &data[pos];
+    
 }

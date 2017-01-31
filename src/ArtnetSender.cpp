@@ -23,10 +23,10 @@ void ArtnetSender::setup() {
 }
 
 void ArtnetSender::sendDmx(vector <unsigned char> dmxData ) {
-    int size = 512;
+    //int size = 512;       Segur que no hem d'omplir tot el vector de 512 posicions?
     int port = 0;
-    artnet.sendDmx(port, enttecIP.c_str(), dmxData.data(), size);       //transformar vector a punter: posarhi ".data()"
-                                                                         //transformar string a punter de char: ".c_str()"
+    artnet.sendDmx(port, enttecIP.c_str(), dmxData.data(), dmxData.size()); //transformar vector a punter: posarhi ".data()"
+                                                                            //transformar string a punter de char: ".c_str()"
     
 
 }

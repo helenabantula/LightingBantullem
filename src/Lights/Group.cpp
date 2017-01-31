@@ -13,10 +13,11 @@ void Group::AddElement(string order, int number)
 {
     
     // no permet elements de diferents tipus
-    elements.resize(number);
+    int currentSize = elements.size();
+    elements.resize(currentSize + number);
 
     for (int i = 0; i < number; i ++) {
-        elements[i].setup(order);
+        elements[i + currentSize].setup(order);
     }
 }
 

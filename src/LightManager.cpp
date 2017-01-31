@@ -19,6 +19,7 @@ void LightManager::setup()
     groups.resize(numGroups);
     
     groups[0].AddElement("RGB",3);
+    groups[0].AddElement("I",3);
     groups[0].setInitChannel(20);
     groups[1].AddElement("RGBA",5);
     groups[1].setInitChannel(50);

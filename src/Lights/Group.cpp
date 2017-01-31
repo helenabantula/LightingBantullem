@@ -22,6 +22,8 @@ void Group::AddElement(string order, int number)
 
 
 vector<unsigned char> Group::getGroupData(){
+    
+    groupData.clear();
 
     for (int i = 0; i < elements.size(); i ++) {
         

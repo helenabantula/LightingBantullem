@@ -24,7 +24,7 @@ void LightManager::setup()
     groups[1].setInitChannel(50);
     groups[2].AddElement("PT",5);
     groups[3].AddElement("I",3);
-    groups[4].setInitChannel(100);
+    groups[4].setInitChannel(150);
     groups[4].AddElement("I",10);
 }
 

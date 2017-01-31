@@ -14,7 +14,7 @@ void Element::setup(string order)
     numCh = order.length();
     name = order;
     data.resize(numCh,0);
-    data[0] = 200;
+    data[0] = 200;          //per poder distingir quan començo un nou element al vector DMX de tothom (a LightManager)
     
     int pos = order.find('R');
     

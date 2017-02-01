@@ -20,7 +20,8 @@ class Element{
         Element(){};
         ~Element(){};
         void setup(string order);
-    
+        void update();
+
     
     
         //State
@@ -29,6 +30,23 @@ class Element{
             STATE_STROBO,
             STATE_FADE
         };
+    
+        enum movementState
+        {
+            FixedPosition,
+            MovingToPosition,
+            MovingInCircles
+        };
+    
+        movementState myMovementState;
+
+        enum colorState
+        {
+            FixedColor,
+            FadingToColor
+        };
+    
+        colorState myColorState;
     
     
         //Attributes
@@ -50,10 +68,13 @@ class Element{
     
         vector<unsigned char> data;   //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
     
+        ofColor myColor; // Color
     
     
         //Methods
         vector<unsigned char> getInfo(){return data;};
+    
+        void SetColor(ofColor color);
     
     
 };

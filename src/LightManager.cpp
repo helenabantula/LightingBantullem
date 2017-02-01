@@ -40,7 +40,7 @@ void LightManager::update(){
 
             if (groups[i].initChannel >0) {
                 int resta = groups[i].initChannel - dmxDataPacket.size();
-                vector<unsigned char> auxVec(resta,100);
+                vector<unsigned char> auxVec(resta,0);
                 dmxDataPacket.reserve(dmxDataPacket.size() + auxVec.size());
                 dmxDataPacket.insert(dmxDataPacket.end(), auxVec.begin(), auxVec.end());
             }
@@ -49,4 +49,10 @@ void LightManager::update(){
         }
     
     sender.sendDmx(dmxDataPacket);
+}
+
+
+void LightManager::setGroupColor(int groupIndex, ofColor color)
+{
+    groups[groupIndex].setColor(color);
 }

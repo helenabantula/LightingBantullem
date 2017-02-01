@@ -34,7 +34,9 @@ public:
     void setup();
     void update();
     
-    void changeGroupState(string state);
+    //void changeGroupState(string state);
+    
+    void setGroupColor(int groupIndex, ofColor color);
     
     
     

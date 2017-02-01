@@ -41,3 +41,11 @@ vector<unsigned char> Group::getGroupData(){
 void Group::setInitChannel(int initChannel_){
     initChannel = initChannel_;
 }
+
+void Group::setColor(ofColor color)
+{
+    for(int i = 0; i < elements.size(); i++)
+    {
+        elements[i].SetColor(color);
+    }
+}

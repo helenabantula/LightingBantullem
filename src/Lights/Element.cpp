@@ -14,7 +14,7 @@ void Element::setup(string order)
     numCh = order.length();
     name = order;
     data.resize(numCh,0);
-    data[0] = 200;          //per poder distingir quan comeno un nou element al vector DMX de tothom (a LightManager)
+    //data[0] = 200;          //per poder distingir quan comeno un nou element al vector DMX de tothom (a LightManager)
     
     int pos = order.find('R');
     if (pos>=0)
@@ -53,4 +53,43 @@ void Element::setup(string order)
     if (pos>=0)
         t = &data[pos];
     
+    myColorState = FixedColor;
+    myMovementState = FixedPosition;
+    
+    myColor = ofColor(1,1,1);
+    
 }
+
+void Element::update()
+{
+    
+    *r = myColor.r;
+    *g = myColor.g;
+    *b = myColor.b;
+    *i = myColor.a;
+
+    
+    switch (myColorState) {
+            
+        case FixedColor:
+            
+            
+            
+        break;
+            
+        case FadingToColor:
+            
+            
+            
+        break;
+    }
+
+}
+
+void Element::SetColor(ofColor color)
+{
+    myColor = color;
+}
+
+
+

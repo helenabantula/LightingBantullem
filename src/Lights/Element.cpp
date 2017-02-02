@@ -63,23 +63,13 @@ void Element::setup(string order)
 void Element::update()
 {
     
-    *r = myColor.r;
-    *g = myColor.g;
-    *b = myColor.b;
-    *i = myColor.a;
-
-    
     switch (myColorState) {
             
         case FixedColor:
             
-            
-            
         break;
             
         case FadingToColor:
-            
-            
             
         break;
     }
@@ -88,7 +78,26 @@ void Element::update()
 
 void Element::SetColor(ofColor color)
 {
-    myColor = color;
+    
+    if (this->r) {                  // si hi ha R: interpretem que si hi ha color, sera R,G,B...
+        myColor = color;
+        *r = myColor.r;
+        *g = myColor.g;
+        *b = myColor.b;
+        if (this->i)
+            *i = myColor.a;
+        
+        cout <<*r<< endl;
+        cout <<*g<< endl;
+        cout <<*b<< endl;
+    }
+    else {                          // si no hi ha R, interpretem que l'element no pot canviar de color...
+        cout << "Element X does not allow a change of color!" << endl;
+    
+    }
+    
+
+
 }
 
 

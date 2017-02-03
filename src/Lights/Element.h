@@ -24,12 +24,12 @@ class Element{
 
     
     
-        //State
-        enum state{
-            STATE_QUIET,
-            STATE_STROBO,
-            STATE_FADE
-        };
+//        //State
+//        enum state{
+//            STATE_QUIET,
+//            STATE_STROBO,
+//            STATE_FADE
+//        };
     
         enum movementState
         {
@@ -69,12 +69,16 @@ class Element{
         vector<unsigned char> data;   //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
     
         ofColor myColor; // Color
+        ofColor targetColor;
+        ofColor initialColor;
+        float colorTimer;
+        float colorFadeTime;
     
     
         //Methods
         vector<unsigned char> getInfo(){return data;};
     
-        void SetColor(ofColor color);
+        void SetColor(ofColor color, float fadeTime);
     
     
 };

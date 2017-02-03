@@ -39,13 +39,19 @@ vector<unsigned char> Group::getGroupData(){
 
 
 void Group::setInitChannel(int initChannel_){
-    initChannel = initChannel_;
+    initChannel = initChannel_ -1;
 }
 
-void Group::setColor(ofColor color)
+void Group::setColor(ofColor color, int elementIndex, float fadeTime)
 {
-    for(int i = 0; i < elements.size(); i++)
+    if (elementIndex == -1)
     {
-        elements[i].SetColor(color);
+        for(int i = 0; i < elements.size(); i++)
+        {
+            elements[i].SetColor(color, fadeTime);
+        }
+    }else
+    {
+        elements[elementIndex].SetColor(color, fadeTime);
     }
 }

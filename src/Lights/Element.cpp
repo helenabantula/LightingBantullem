@@ -71,33 +71,48 @@ void Element::update()
             
         case FadingToColor:
             
+            ofColor lerpColor = initialColor;
+            
+            colorTimer += 1 / ofGetFrameRate();
+            
+            myColor = lerpColor.lerp(targetColor, (colorTimer/colorFadeTime));
+            
+            if (colorTimer > colorFadeTime)
+                myColorState = FixedColor;
+            
         break;
     }
-
-}
-
-void Element::SetColor(ofColor color)
-{
+    
     
     if (this->r) {                  // si hi ha R: interpretem que si hi ha color, sera R,G,B...
-        myColor = color;
         *r = myColor.r;
         *g = myColor.g;
         *b = myColor.b;
         if (this->i)
             *i = myColor.a;
-        
-        cout <<*r<< endl;
-        cout <<*g<< endl;
-        cout <<*b<< endl;
     }
     else {                          // si no hi ha R, interpretem que l'element no pot canviar de color...
-        ofLog(OF_LOG_NOTICE, "Change of color not allowed in element type %s", name.c_str());
-    
+        //cout << "Element X does not allow a change of color!" << endl;
+
+    }
+}
+
+void Element::SetColor(ofColor color, float fadeTime)
+{
+    if (fadeTime == 0)
+    {
+        if (this->r)
+            myColor = color;
+    }else
+    {
+        initialColor = myColor;
+        targetColor = color;
+        colorFadeTime = fadeTime;
+        colorTimer = 0;
+        myColorState = FadingToColor;
+        
     }
     
-
-
 }
 
 

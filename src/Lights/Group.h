@@ -31,7 +31,7 @@ public:
     void setInitChannel(int initChannel_);
     
     
-    void setColor(ofColor color);
+    void setColor(ofColor color, int elementIndex, float fadeTime);
     
     
 };

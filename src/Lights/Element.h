@@ -76,7 +76,10 @@ class Element{
     
     
         //Methods
-        vector<unsigned char> getInfo(){return data;};
+        vector<unsigned char> getInfo(){
+            this->update();
+            return data;
+        };
     
         void SetColor(ofColor color, float fadeTime);
     

@@ -27,7 +27,7 @@ vector<unsigned char> Group::getGroupData(){
     groupData.clear();
 
     for (int i = 0; i < elements.size(); i ++) {
-        elements[i].update();
+        //elements[i].update();
         const vector<unsigned char> info = elements[i].getInfo();
         groupData.reserve(groupData.size() + info.size());
         groupData.insert(groupData.end(), info.begin(), info.end());

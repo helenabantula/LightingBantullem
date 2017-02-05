@@ -14,9 +14,9 @@
 
 
 class MovingLight: public ColorLight {
-    public:
+    //public:
 
 
 
-
+};
 #endif /* MovingLight_hpp */

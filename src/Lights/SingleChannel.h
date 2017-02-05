@@ -10,5 +10,13 @@
 #define SingleChannel_hpp
 
 #include <stdio.h>
+#include <Element.h>
+
+class SingleChannel: public Element {
+    public:
+
+};
+
+
 
 #endif /* SingleChannel_hpp */

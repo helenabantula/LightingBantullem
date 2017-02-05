@@ -10,5 +10,13 @@
 #define MovingLight_hpp
 
 #include <stdio.h>
+#include <ColorLight.h>
+
+
+class MovingLight: public ColorLight {
+    public:
+
+
+
 
 #endif /* MovingLight_hpp */

@@ -92,7 +92,7 @@ void Element::SetColor(ofColor color)
         cout <<*b<< endl;
     }
     else {                          // si no hi ha R, interpretem que l'element no pot canviar de color...
-        cout << "Element X does not allow a change of color!" << endl;
+        ofLog(OF_LOG_NOTICE, "Change of color not allowed in element type %s", name.c_str());
     
     }
     

@@ -10,5 +10,16 @@
 #define ColorLight_hpp
 
 #include <stdio.h>
+#include <Element.h>
+
+
+class ColorLight: public Element {
+    public:
+    
+};
+
+
+
+
 
 #endif /* ColorLight_hpp */

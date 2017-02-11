@@ -14,7 +14,11 @@
 
 class SingleChannel: public Element {
     public:
-
+    
+        unsigned char* i = 0;     //intensity
+    
+        SingleChannel();
+        ~SingleChannel(){};
 };
 
 

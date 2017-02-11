@@ -13,6 +13,15 @@
 #include "ofMain.h"
 
 #include "Element.h"
+#include "SingleChannel.h"
+#include "ColorLight.h"
+#include "MovingLight.h"
+
+enum lightType{
+    LIGHT_SINGLECHANNEL,
+    LIGHT_COLOR,
+    LIGHT_MOVINGHEAD
+};
 
 class Group{
 public:
@@ -21,12 +30,12 @@ public:
     Group(){};
     ~Group(){};
     
-    vector<Element> elements;
+    vector<Element*> elements;
     int initChannel = 0;
     vector<unsigned char> groupData;
     
     
-    void AddElement(string order, int number);
+    void AddElement(lightType type, int number, string order = "");
     vector<unsigned char> getGroupData();
     void setInitChannel(int initChannel_);
     

@@ -13,9 +13,26 @@
 #include <ColorLight.h>
 
 
-class MovingLight: public ColorLight {
-    //public:
+enum movementState
+{
+    FixedPosition,
+    MovingToPosition,
+    MovingInCircles
+};
 
+
+class MovingLight: public ColorLight {
+    public:
+
+        unsigned char* p = 0;     //pan
+        unsigned char* t = 0;     //tilt
+    
+        movementState myMovementState;
+    
+        MovingLight(string order);
+        ~MovingLight(){};
+    
+        void update();
 
 
 };

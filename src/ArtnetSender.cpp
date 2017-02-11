@@ -28,5 +28,7 @@ void ArtnetSender::sendDmx(vector <unsigned char> dmxData ) {
     artnet.sendDmx(port, enttecIP.c_str(), dmxData.data(), dmxData.size()); //transformar vector a punter: posarhi ".data()"
                                                                             //transformar string a punter de char: ".c_str()"
     
+    cout << dmxData[19] << endl;
+    
 
 }

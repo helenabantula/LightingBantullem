@@ -15,17 +15,15 @@ void LightManager::setup()
     
     sender.setup();
     
-    int numGroups = 5;
+    int numGroups = 4;
     groups.resize(numGroups);
     
-    groups[0].AddElement("RGB",1);
+    groups[0].AddElement(LIGHT_COLOR,1,"RGB");
     groups[0].setInitChannel(20);
-    groups[1].AddElement("IRGB",5);
+    groups[1].AddElement(LIGHT_COLOR,5,"IRGB");
     groups[1].setInitChannel(50);
-    groups[2].AddElement("PT",5);
-    groups[3].AddElement("I",3);
-    groups[4].setInitChannel(150);
-    groups[4].AddElement("I",10);
+    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
+    groups[3].AddElement(LIGHT_SINGLECHANNEL,3);
 
 
 }

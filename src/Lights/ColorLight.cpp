@@ -84,6 +84,8 @@ void ColorLight::fadingToColor(){
         myColorState = FixedColor;
 }
 
+
+
 void ColorLight::SetColor(ofColor color, float fadeTime){
     if (fadeTime == 0){
         if (this->r)

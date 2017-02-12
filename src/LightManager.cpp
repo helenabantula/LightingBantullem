@@ -24,6 +24,8 @@ void LightManager::setup()
     groups[1].setInitChannel(50);
     groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
     groups[3].AddElement(LIGHT_SINGLECHANNEL,3);
+    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
+    groups[3].AddElement(LIGHT_MOVINGHEAD,3, "RGBPT");
 
 
 }

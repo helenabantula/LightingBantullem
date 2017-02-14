@@ -20,15 +20,15 @@ void Group::AddElement(lightType type, int number, string order)
         
         switch (type) {
             case LIGHT_SINGLECHANNEL:
-                elements[i] =  new SingleChannel();
+                elements[i + currentSize] =  new SingleChannel();
                 break;
                 
             case LIGHT_COLOR:
-                elements[i] =  new ColorLight(order);
+                elements[i + currentSize] =  new ColorLight(order);
                 break;
                 
             case LIGHT_MOVINGHEAD:
-                elements[i] =  new MovingLight(order);
+                elements[i + currentSize] =  new MovingLight(order);
                 break;
                 
             default:

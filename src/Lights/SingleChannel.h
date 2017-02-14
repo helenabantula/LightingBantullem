@@ -19,6 +19,8 @@ class SingleChannel: public Element {
     
         SingleChannel();
         ~SingleChannel(){};
+    
+        void update(){};
 };
 
 

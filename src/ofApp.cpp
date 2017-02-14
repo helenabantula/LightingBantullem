@@ -7,6 +7,12 @@ void ofApp::setup(){
     
     manager.setGroupColor(0, ofColor(255,0,100));
     //manager.setGroupColor(1, ofColor(150,140,3));
+    
+    mySignalState = STATE_SIN;
+    
+    SignalGenerator signalGen2( mySignalState, 1, 0);
+    
+    signalGen = signalGen2;
 
 }
 
@@ -19,6 +25,10 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    
+    float signal= signalGen.getSignal();
+    
+    ofDrawBitmapString(signal, 100, 100);
 
 }
 

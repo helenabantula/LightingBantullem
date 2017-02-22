@@ -67,11 +67,17 @@ void ColorLight::update(){
             break;
     }
     
-        *r = myColor.r;
-        *g = myColor.g;
-        *b = myColor.b;
-        if (this->i)
-            *i = myColor.a;
+    AssignMyColor();
+
+}
+
+void ColorLight::AssignMyColor()
+{
+    *r = myColor.r;
+    *g = myColor.g;
+    *b = myColor.b;
+    if (this->i)
+        *i = myColor.a;
 }
 
 

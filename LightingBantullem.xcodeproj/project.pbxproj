@@ -20,6 +20,7 @@
 		836A2A971E44AC2A00212BEB /* SingleChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836A2A951E44AC2A00212BEB /* SingleChannel.cpp */; };
 		836A2A9A1E44AFCA00212BEB /* ColorLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836A2A981E44AFCA00212BEB /* ColorLight.cpp */; };
 		836A2A9D1E44AFDB00212BEB /* MovingLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 836A2A9B1E44AFDB00212BEB /* MovingLight.cpp */; };
+		9AD0A47B1E5370CD0034746E /* SignalGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD0A4791E5370CD0034746E /* SignalGenerator.cpp */; };
 		AFA770E077C98B68898648B2 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = 011E83AA30DC0C5FB5381D04 /* network.c */; };
 		BE2CEB38B94EFF1BB2D599AD /* ofxArtNetNodeEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D0471CE092FEAB47D35E9DA /* ofxArtNetNodeEntry.cpp */; };
 		C7A480126339724CE848F22B /* Group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B930552DF9954C100D467 /* Group.cpp */; };
@@ -80,6 +81,8 @@
 		88929991473DE20FE168D03C /* LightManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = LightManager.cpp; path = src/LightManager.cpp; sourceTree = SOURCE_ROOT; };
 		8E7B930552DF9954C100D467 /* Group.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Group.cpp; path = src/Lights/Group.cpp; sourceTree = SOURCE_ROOT; };
 		97F1FB8C7A7B28F160C8F56A /* LocalAddressGrabber.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LocalAddressGrabber.h; path = ../../../addons/ofxArtNet_PM/src/LocalAddressGrabber.h; sourceTree = SOURCE_ROOT; };
+		9AD0A4791E5370CD0034746E /* SignalGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SignalGenerator.cpp; sourceTree = "<group>"; };
+		9AD0A47A1E5370CD0034746E /* SignalGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalGenerator.h; sourceTree = "<group>"; };
 		A04B292D03811115CFD200FB /* ArtnetSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ArtnetSender.h; path = src/ArtnetSender.h; sourceTree = SOURCE_ROOT; };
 		A771139B825081BCAB712F43 /* artnet.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = artnet.c; path = ../../../addons/ofxArtNet_PM/libs/artnet/src/artnet.c; sourceTree = SOURCE_ROOT; };
 		BC473AEC2F7CFF5459BC9C50 /* common.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = common.h; path = ../../../addons/ofxArtNet_PM/libs/artnet/include/common.h; sourceTree = SOURCE_ROOT; };
@@ -240,6 +243,8 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				9AD0A4791E5370CD0034746E /* SignalGenerator.cpp */,
+				9AD0A47A1E5370CD0034746E /* SignalGenerator.h */,
 				72AE3D5FC085313019E4B35C /* ArtnetSender.cpp */,
 				A04B292D03811115CFD200FB /* ArtnetSender.h */,
 				88929991473DE20FE168D03C /* LightManager.cpp */,
@@ -356,6 +361,7 @@
 				BE2CEB38B94EFF1BB2D599AD /* ofxArtNetNodeEntry.cpp in Sources */,
 				4A49D5B6E4CB67A97FD7BAE0 /* artnet.c in Sources */,
 				723D9A873147B54BE80DE89C /* misc.c in Sources */,
+				9AD0A47B1E5370CD0034746E /* SignalGenerator.cpp in Sources */,
 				AFA770E077C98B68898648B2 /* network.c in Sources */,
 				5F7B2A57AA22B794398838C9 /* receive.c in Sources */,
 				836A2A971E44AC2A00212BEB /* SingleChannel.cpp in Sources */,

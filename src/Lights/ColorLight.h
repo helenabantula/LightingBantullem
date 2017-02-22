@@ -46,6 +46,7 @@ class ColorLight: public Element {
         ~ColorLight(){};
     
         virtual void update();
+        void AssignMyColor();
         void SetColor(ofColor color, float fadeTime);
         void fadingToColor();
     

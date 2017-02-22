@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "LightManager.h"
+#include "SignalGenerator.h"
+
 
 
 class ofApp : public ofBaseApp{
@@ -19,4 +21,7 @@ class ofApp : public ofBaseApp{
 
         bool isKeyReleased = true;
 
+        signalState mySignalState;
+    
+        SignalGenerator signalGen;
 };

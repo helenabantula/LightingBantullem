@@ -71,3 +71,17 @@ void Group::setColor(ofColor color, int elementIndex, float fadeTime)
         elements[elementIndex]->SetColor(color, fadeTime);
     }
 }
+
+
+void Group::setIntensity(unsigned char targetI, int elementIndex, float fadeTime){
+    
+    if (elementIndex == -1){    // Everyone
+        for(int i = 0; i < elements.size(); i++)
+        {
+            elements[i]->SetIntensity(targetI, fadeTime);
+        }
+    }
+    else{                       // Just a single one
+        elements[elementIndex]->SetIntensity(targetI, fadeTime);
+    }
+}

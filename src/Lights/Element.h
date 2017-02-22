@@ -40,6 +40,7 @@ class Element{
     
         virtual void SetColor(ofColor color, float fadeTime){};
         virtual void update(){};
+        virtual void SetIntensity(unsigned char targetI, float fadeTime){};
     
     
 };

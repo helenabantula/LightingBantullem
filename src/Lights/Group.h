@@ -41,6 +41,7 @@ public:
     
     
     void setColor(ofColor color, int elementIndex, float fadeTime);
+    void setIntensity(unsigned char targetI, int elementIndex, float fadeTime);
     
     
 };

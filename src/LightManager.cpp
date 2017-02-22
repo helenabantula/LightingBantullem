@@ -18,7 +18,7 @@ void LightManager::setup()
     int numGroups = 4;
     groups.resize(numGroups);
     
-    groups[0].AddElement(LIGHT_COLOR,1,"RGB");
+    groups[0].AddElement(LIGHT_SINGLECHANNEL,1,"I");
     groups[0].setInitChannel(20);
     groups[1].AddElement(LIGHT_COLOR,5,"IRGB");
     groups[1].setInitChannel(50);
@@ -56,4 +56,10 @@ void LightManager::update(){
 void LightManager::setGroupColor(int groupIndex, ofColor color, int elementIndex, float fadeTime)
 {
     groups[groupIndex].setColor(color, elementIndex, fadeTime);
+}
+
+
+void LightManager::setGroupIntensity(int groupIndex, unsigned char targetI, float fadeTime, int elementIndex)
+{
+    groups[groupIndex].setIntensity(targetI, elementIndex, fadeTime);
 }

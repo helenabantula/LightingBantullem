@@ -37,6 +37,7 @@ public:
     //void changeGroupState(string state);
     
     void setGroupColor(int groupIndex, ofColor color, int elementIndex = -1, float fadeTime = 0);
+    void setGroupIntensity(int groupIndex, unsigned char targetI, float fadeTime = 0,  int elementIndex = -1);
     
     
     

@@ -62,6 +62,9 @@ void ColorLight::update(){
             this->fadingToColor();
             
             break;
+            
+        default:
+            break;
     }
     
         *r = myColor.r;
@@ -87,10 +90,8 @@ void ColorLight::fadingToColor(){
 
 
 void ColorLight::SetColor(ofColor color, float fadeTime){
-    if (fadeTime == 0){
-        if (this->r)
-            myColor = color;
-        }
+    if (fadeTime == 0)
+        myColor = color;
     else{
         initialColor = myColor;
         targetColor = color;

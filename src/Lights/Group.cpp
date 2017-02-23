@@ -85,3 +85,19 @@ void Group::setIntensity(unsigned char targetI,  float fadeTime, int elementInde
         elements[elementIndex]->SetIntensity(targetI, fadeTime);
     }
 }
+
+void Group::makeElementsFollow(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent, int elementIndex)
+{
+    if (elementIndex == -1){    // Everyone
+        for(int i = 0; i < elements.size(); i++)
+        {
+            elements[i]->FollowSignal( Amin, Amax, signal, freq, phase, randomComponent);
+        }
+    }
+    else{                       // Just a single one
+        elements[elementIndex]->FollowSignal( Amin, Amax, signal, freq, phase, randomComponent);
+    }
+
+
+}
+

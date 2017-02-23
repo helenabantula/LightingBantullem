@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "ofMain.h"
 #include "ofxTweenzor.h"
+#include "SignalGenerator.h"
 
 
 class Element{
@@ -35,6 +36,7 @@ class Element{
     
         vector<float> data;
         vector<unsigned char> dataUC; //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
+        SignalGenerator generator;
 
 
     
@@ -52,6 +54,9 @@ class Element{
         virtual void SetColor(ofColor color, float fadeTime){};
         virtual void update(){};
         virtual void SetIntensity(unsigned char targetI, float fadeTime){};
+    
+        virtual void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent){};
+
     
     
 };

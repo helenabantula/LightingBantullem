@@ -67,3 +67,9 @@ void LightManager::setGroupIntensity(int groupIndex, unsigned char targetI, floa
 {
     groups[groupIndex].setIntensity(targetI, fadeTime, elementIndex);
 }
+
+void LightManager::makeGroupFollow(int groupIndex, int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent, int elementIndex)
+{
+    groups[groupIndex].makeElementsFollow( Amin,  Amax,  signal,  freq,  phase,  randomComponent,  elementIndex );
+}
+

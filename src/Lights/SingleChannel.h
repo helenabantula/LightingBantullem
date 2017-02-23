@@ -28,9 +28,8 @@ class SingleChannel: public Element {
         intensityState myIntensityState;
         float targetIntensity;
 
-    
-    
-    
+        int Amin;
+        int Amax;
     
         SingleChannel(string order = "I");
         ~SingleChannel(){};
@@ -38,6 +37,11 @@ class SingleChannel: public Element {
         void update();
     
         void SetIntensity(unsigned char targetI, float fadeTime);
+    
+        void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent);
+
+    
+    
         void FadingToIntensity();
 };
 

@@ -23,17 +23,16 @@ enum intensityState
 class SingleChannel: public Element {
     public:
     
-        unsigned char* i = 0;     //intensity
-        unsigned char myIntensity = 0;     //intensity
+        float* i = 0;     //intensity
+        float myIntensity = 0;     //intensity
         intensityState myIntensityState;
-        unsigned char targetIntensity;
-        float intensityTimer = 0;
-        float intensityFadeTime = 0;
+        float targetIntensity;
+
     
     
     
     
-        SingleChannel();
+        SingleChannel(string order = "I");
         ~SingleChannel(){};
     
         void update();

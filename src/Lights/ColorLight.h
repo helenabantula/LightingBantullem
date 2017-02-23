@@ -23,13 +23,13 @@ enum colorState
 class ColorLight: public Element {
     public:
     
-        unsigned char* r = 0;
-        unsigned char* g = 0;
-        unsigned char* b = 0;
-        unsigned char* w = 0;
-        unsigned char* s = 0;
-        unsigned char* i = 0;
-        unsigned char* a = 0;
+        float* r = 0;
+        float* g = 0;
+        float* b = 0;
+        float* w = 0;
+        float* s = 0;
+        float* i = 0;
+        float* a = 0;
     
     
         ofColor myColor; // Color
@@ -42,7 +42,7 @@ class ColorLight: public Element {
     
     
         ColorLight(string order);
-        ColorLight(){};
+        //ColorLight(){};
         ~ColorLight(){};
     
         virtual void update();

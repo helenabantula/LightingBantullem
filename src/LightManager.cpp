@@ -15,11 +15,13 @@ void LightManager::setup()
     
     sender.setup();
     
+    Tweenzor::init();
+    
     int numGroups = 4;
     groups.resize(numGroups);
     
     groups[0].AddElement(LIGHT_SINGLECHANNEL,1,"I");
-    groups[0].setInitChannel(20);
+    groups[0].setInitChannel(1);
     groups[1].AddElement(LIGHT_COLOR,5,"IRGB");
     groups[1].setInitChannel(50);
     groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
@@ -32,6 +34,8 @@ void LightManager::setup()
 
 
 void LightManager::update(){
+    
+    Tweenzor::update(ofGetElapsedTimeMillis());
     
     vector<unsigned char> info;
     dmxDataPacket.clear();
@@ -53,13 +57,13 @@ void LightManager::update(){
 }
 
 
-void LightManager::setGroupColor(int groupIndex, ofColor color, int elementIndex, float fadeTime)
+void LightManager::setGroupColor(int groupIndex, ofColor color, float fadeTime, int elementIndex)
 {
-    groups[groupIndex].setColor(color, elementIndex, fadeTime);
+    groups[groupIndex].setColor(color, fadeTime, elementIndex);
 }
 
 
 void LightManager::setGroupIntensity(int groupIndex, unsigned char targetI, float fadeTime, int elementIndex)
 {
-    groups[groupIndex].setIntensity(targetI, elementIndex, fadeTime);
+    groups[groupIndex].setIntensity(targetI, fadeTime, elementIndex);
 }

@@ -24,8 +24,8 @@ enum movementState
 class MovingLight: public ColorLight {
     public:
 
-        unsigned char* p = 0;     //pan
-        unsigned char* t = 0;     //tilt
+        float* p = 0;     //pan
+        float* t = 0;     //tilt
     
         movementState myMovementState;
     

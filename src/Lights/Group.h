@@ -40,8 +40,8 @@ public:
     void setInitChannel(int initChannel_);
     
     
-    void setColor(ofColor color, int elementIndex, float fadeTime);
-    void setIntensity(unsigned char targetI, int elementIndex, float fadeTime);
+    void setColor(ofColor color, float fadeTime, int elementIndex);
+    void setIntensity(unsigned char targetI, float fadeTime, int elementIndex);
     
     
 };

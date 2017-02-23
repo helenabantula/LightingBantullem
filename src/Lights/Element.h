@@ -11,13 +11,19 @@
 
 #include <stdio.h>
 #include "ofMain.h"
+#include "ofxTweenzor.h"
 
 
 class Element{
     public:
     
         //Constructor - destructor
-        Element(){};
+        Element(string order){
+            numCh = order.length();
+            name = order;
+            data.resize(numCh,0);
+            dataUC.resize(numCh,0);
+        };
         ~Element(){};
 
     
@@ -27,15 +33,20 @@ class Element{
         int numCh;
     
     
-        vector<unsigned char> data;   //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
-    
+        vector<float> data;
+        vector<unsigned char> dataUC; //veure quin tipus de data va be que sigui per com espera rebre dmx l'addon!
+
 
     
     
         //Methods
         vector<unsigned char> getInfo(){
             this->update();
-            return data;
+            
+            for (int i = 0; i<data.size(); i++){
+                dataUC[i] = (unsigned char)data[i];
+            }
+            return dataUC;
         };
     
         virtual void SetColor(ofColor color, float fadeTime){};

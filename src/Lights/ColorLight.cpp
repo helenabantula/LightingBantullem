@@ -9,11 +9,9 @@
 #include "ColorLight.h"
 
 
-ColorLight::ColorLight(string order){
+ColorLight::ColorLight(string order):Element(order){
     
-    numCh = order.length();
-    name = order;
-    data.resize(numCh,0);
+
     data[0] = 200;          //per poder distingir quan començo un nou element al vector DMX de tothom (a LightManager)
     
     int pos = order.find('R');
@@ -89,7 +87,7 @@ void ColorLight::fadingToColor(){
     
     myColor = lerpColor.lerp(targetColor, (colorTimer/colorFadeTime));
     
-    if (colorTimer > colorFadeTime)
+    if (colorTimer >= colorFadeTime)
         myColorState = FixedColor;
 }
 

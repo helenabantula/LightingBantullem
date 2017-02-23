@@ -59,7 +59,7 @@ void Group::setInitChannel(int initChannel_){
 }
 
 
-void Group::setColor(ofColor color, int elementIndex, float fadeTime)
+void Group::setColor(ofColor color, float fadeTime, int elementIndex)
 {
     if (elementIndex == -1){    // Everyone
         for(int i = 0; i < elements.size(); i++)
@@ -73,7 +73,7 @@ void Group::setColor(ofColor color, int elementIndex, float fadeTime)
 }
 
 
-void Group::setIntensity(unsigned char targetI, int elementIndex, float fadeTime){
+void Group::setIntensity(unsigned char targetI,  float fadeTime, int elementIndex){
     
     if (elementIndex == -1){    // Everyone
         for(int i = 0; i < elements.size(); i++)

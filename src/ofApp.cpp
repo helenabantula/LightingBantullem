@@ -39,12 +39,12 @@ void ofApp::keyPressed(int key){
     if (isKeyReleased == true)
     {
         if (key == 'r') {
-            manager.setGroupColor(0, ofColor(255,0,0),-1,2);
-            manager.setGroupIntensity(0, 255, 3);
+            manager.setGroupColor(0, ofColor(255,0,0),2);
+            manager.setGroupIntensity(0, 255,4);
         }
         if (key == 'g'){
-            manager.setGroupColor(0, ofColor(0,0,255),-1,2);
-            manager.setGroupIntensity(0, 0, 3);
+            manager.setGroupColor(0, ofColor(0,0,255),2);
+            manager.setGroupIntensity(0, 0, 4);
         }
         
         isKeyReleased = false;

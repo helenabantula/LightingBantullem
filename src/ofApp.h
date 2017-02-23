@@ -21,7 +21,11 @@ class ofApp : public ofBaseApp{
 
         bool isKeyReleased = true;
 
-        signalState mySignalState;
     
-        SignalGenerator signalGen;
+        signalState mySignalState1;
+        signalState mySignalState2;
+
+        SignalGenerator signalGen1;
+        SignalGenerator signalGen2;
+
 };

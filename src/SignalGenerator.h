@@ -19,9 +19,13 @@
 enum signalState
 {
     STATE_SIN,
-    STATE_NOISE,
-    STATE_SQUARE
-    
+    STATE_COS,
+    STATE_SQUARE,
+    STATE_UPSAW,
+    STATE_DOWNSAW,
+    STATE_TRIANGLE,
+    STATE_RANDOM
+
 };
 
 
@@ -34,6 +38,7 @@ public:
     
     int myFreq;
     int myPhase;
+    float myRandomComponent;
     
     float mySignal;
     
@@ -41,7 +46,7 @@ public:
     
     SignalGenerator(){};
     //SignalGenerator(signalState signal);
-    SignalGenerator(signalState signal, int frequency, int phase);
+    SignalGenerator(signalState signal, int frequency, int phase, float randomComponent);
     
     ~SignalGenerator(){};
 

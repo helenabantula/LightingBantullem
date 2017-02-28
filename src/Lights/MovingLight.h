@@ -33,6 +33,7 @@ class MovingLight: public ColorLight {
         ~MovingLight(){};
     
         void update();
+        //void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent){};
 
 
 };

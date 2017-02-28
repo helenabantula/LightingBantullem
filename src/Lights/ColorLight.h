@@ -50,6 +50,8 @@ class ColorLight: public Element {
         void SetColor(ofColor color, float fadeTime);
         void fadingToColor();
     
+        //void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent);
+
     
     
 };

@@ -17,6 +17,8 @@
 #include "ColorLight.h"
 #include "MovingLight.h"
 
+
+
 enum lightType{
     LIGHT_SINGLECHANNEL,
     LIGHT_COLOR,
@@ -43,6 +45,8 @@ public:
     void setColor(ofColor color, float fadeTime, int elementIndex);
     void setIntensity(unsigned char targetI, float fadeTime, int elementIndex);
     
+    void makeElementsFollow(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent, int elementIndex);
+
     
 };
 

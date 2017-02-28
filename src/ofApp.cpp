@@ -11,7 +11,7 @@ void ofApp::setup(){
     mySignalState1 = STATE_SIN;
 
     mySignalState2 = STATE_UPSAW;
-
+    
     
     SignalGenerator signalGen11( mySignalState1, 3, 0, 0.05);
     signalGen1 = signalGen11;
@@ -54,8 +54,9 @@ void ofApp::keyPressed(int key){
     if (isKeyReleased == true)
     {
         if (key == 'r') {
-            manager.setGroupColor(0, ofColor(255,0,0),2);
-            manager.setGroupIntensity(0, 255,4);
+
+            manager.makeGroupFollow(0, 0, 255, STATE_TRIANGLE, 1, 0, 0.01);
+            
         }
         if (key == 'g'){
             manager.setGroupColor(0, ofColor(0,0,255),2);

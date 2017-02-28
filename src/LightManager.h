@@ -40,6 +40,7 @@ public:
     void setGroupColor(int groupIndex, ofColor color,  float fadeTime = 0, int elementIndex = -1);
     void setGroupIntensity(int groupIndex, unsigned char targetI,  float fadeTime = 0, int elementIndex = -1);
     
+    void makeGroupFollow(int groupIndex, int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent, int elementIndex = -1);
     
     
 private:

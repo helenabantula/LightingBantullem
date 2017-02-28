@@ -26,10 +26,6 @@ class SingleChannel: public Element {
         float* i = 0;     //intensity
         float myIntensity = 0;     //intensity
         intensityState myIntensityState;
-        float targetIntensity;
-
-    
-    
     
     
         SingleChannel(string order = "I");
@@ -37,7 +33,7 @@ class SingleChannel: public Element {
     
         void update();
     
-        void SetIntensity(unsigned char targetI, float fadeTime);
+        void SetIntensity(float targetI, float fadeTime);
         void FadingToIntensity();
 };
 

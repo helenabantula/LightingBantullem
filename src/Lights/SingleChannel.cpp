@@ -40,9 +40,8 @@ void SingleChannel::update(){
 
 
 
-void SingleChannel::SetIntensity(unsigned char targetI, float fadeTime){
+void SingleChannel::SetIntensity(float targetI, float fadeTime){
         myIntensity = *i;
-        targetIntensity = targetI;
         Tweenzor::add(i,myIntensity, targetI, 0.f, fadeTime, 0);
         Tweenzor::getTween(i)->setRepeat( 2, true );
 }

@@ -23,12 +23,14 @@ void SingleChannel::update(){
     switch (myIntensityState) {
             
         case STATE_FIXED_INTENSITY:
+            //generator.stop();
             break;
             
         case STATE_FADE_INTENSITY:
             break;
         case STATE_FOLLOW_INTENSITY:
             *i = ofMap(generator.getSignal(), 0, 1, Amin, Amax);
+            // *i = generator.getSignal();
             break;
             
         default:

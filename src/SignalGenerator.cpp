@@ -92,6 +92,8 @@ void SignalGenerator::update()
     if (mySignal < 0)
         mySignal = 0;
     
+    //ofClamp
+    
 }
 
 float SignalGenerator::getSignal()

@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Lights/SingleChannel.cpp"
-            timestampString = "509545399.388086"
+            timestampString = "509978169.358746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "SingleChannel::SetIntensity(unsigned char targetI, float fadeTime)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "SingleChannel::SetIntensity(float targetI, float fadeTime)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

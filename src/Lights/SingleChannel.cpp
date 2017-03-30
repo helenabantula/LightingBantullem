@@ -29,8 +29,7 @@ void SingleChannel::update(){
         case STATE_FADE_INTENSITY:
             break;
         case STATE_FOLLOW_INTENSITY:
-            *i = ofMap(generator.getSignal(), 0, 1, Amin, Amax);
-            // *i = generator.getSignal();
+            *i = generator.getSignal();
             break;
             
         default:
@@ -51,13 +50,11 @@ void SingleChannel::SetIntensity(float targetI, float fadeTime){
 }
 
 
-void SingleChannel::FollowSignal(int Amin_, int Amax_, signalState signal, int freq, int phase, float randomComponent)
+void SingleChannel::FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent)
 {
-    Amin = Amin_;
-    Amax = Amax_;
+
     
     myIntensityState = STATE_FOLLOW_INTENSITY;
-    SignalGenerator generator2(signal,freq,phase,randomComponent);
-    generator = generator2;
+    generator.setParams(signal, freq, phase, randomComponent,Amin, Amax);
 }
 

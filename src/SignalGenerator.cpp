@@ -16,14 +16,26 @@
 //    
 //}
 
-SignalGenerator::SignalGenerator(signalState signal, int frequency, int phase, float randomComponent)
+//SignalGenerator::SignalGenerator(signalState signal, int frequency, int phase, float randomComponent)
+//{
+//    mySignalState = signal;
+//
+//    myFreq = frequency;
+//    myPhase = phase;
+//    myRandomComponent = randomComponent;
+//
+//}
+
+
+void SignalGenerator::setParams(signalState signal, int frequency, int phase, float randomComponent, int Amin_, int Amax_)
 {
     mySignalState = signal;
-
     myFreq = frequency;
     myPhase = phase;
     myRandomComponent = randomComponent;
-
+    Amin = Amin_;
+    Amax = Amax_;
+    
 }
 
 void SignalGenerator::update()
@@ -34,43 +46,49 @@ void SignalGenerator::update()
     
     switch (mySignalState) {
             
-        case STATE_SIN:
+        case STATE_SIN: {
             
             mySignal = (sin(myFreq*timer+myPhase)/2)+0.5 + myRandom;
             
             break;
+        }
             
-        case STATE_COS:
+        case STATE_COS: {
             
             mySignal = (cos(myFreq*timer+myPhase)/2)+0.5 + myRandom;
             
             break;
+        }
             
-        case STATE_UPSAW:
+        case STATE_UPSAW: {
             
             mySignal = timer*myFreq+myPhase - floor(timer*myFreq+myPhase) + myRandom;
             
             break;
+        }
             
-        case STATE_DOWNSAW:
+        case STATE_DOWNSAW:{
             
             mySignal = -timer*myFreq+myPhase - floor(-timer*myFreq+myPhase) + myRandom;
             
             break;
+        }
             
-        case STATE_TRIANGLE:
+        case STATE_TRIANGLE:{
             
             mySignal = 1.0 - fabs(fmod(timer*myFreq+myPhase,2.0) - 1.0) + myRandom;
             
             break;
+        }
             
-        case STATE_RANDOM:
+        case STATE_RANDOM:{
             
             mySignal = ofRandom(0, 1);
             
             break;
+        }
             
-        case STATE_SQUARE:
+        case STATE_SQUARE:{
             
             float sinus = sin(myFreq*timer+myPhase);
             
@@ -83,14 +101,21 @@ void SignalGenerator::update()
             }
             
             break;
+        }
             
+        default:{
+            mySignal = 0;
+            //break;
+        }
     }
     
-    if (mySignal > 1)
-        mySignal = 1;
+    mySignal = ofMap(mySignal, 0, 1, Amin, Amax);
     
-    if (mySignal < 0)
-        mySignal = 0;
+    if (mySignal > Amax)
+        mySignal = Amax;
+    
+    if (mySignal < Amin)
+        mySignal = Amin;
     
     //ofClamp
     

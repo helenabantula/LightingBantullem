@@ -29,8 +29,6 @@ class SingleChannel: public Element {
 
         float targetIntensity;
 
-        int Amin;
-        int Amax;
     
         SingleChannel(string order = "I");
         ~SingleChannel(){};

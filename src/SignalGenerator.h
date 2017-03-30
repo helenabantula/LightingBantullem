@@ -33,22 +33,24 @@ class SignalGenerator {
     
 public:
     
+    SignalGenerator(){};
+    ~SignalGenerator(){};
+    
     
     signalState mySignalState;
     
     int myFreq;
     int myPhase;
-    float myRandomComponent;
-    
-    float mySignal;
+    float mySignal = 0;
     
     float timer = 0;
+    float myRandomComponent;
+    int Amin, Amax;
     
-    SignalGenerator(){};
-    //SignalGenerator(signalState signal);
-    SignalGenerator(signalState signal, int frequency, int phase, float randomComponent);
     
-    ~SignalGenerator(){};
+    void setParams(signalState signal, int frequency, int phase, float randomComponent, int Amin = 0, int Amax = 255);
+    
+
 
     void update();
     float getSignal();

@@ -13,11 +13,11 @@ void ofApp::setup(){
     mySignalState2 = STATE_UPSAW;
     
     
-    SignalGenerator signalGen11( mySignalState1, 3, 0, 0.05);
-    signalGen1 = signalGen11;
+    //SignalGenerator signalGen1;
+    signalGen1.setParams(mySignalState1, 3, 0, 0.50, 0, 1);
     
-    SignalGenerator signalGen22( mySignalState2, 3, 0, 0.05);
-    signalGen2 = signalGen22;
+    //SignalGenerator signalGen2;
+    signalGen2.setParams(mySignalState2, 3, 0, 0.05, 0, 2);
     
     ofSetBackgroundAuto(false);
     ofBackground(200,200,200);
@@ -34,8 +34,9 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    float signal1= signalGen1.getSignal();
-    float signal2= signalGen2.getSignal();
+    float signal1 = signalGen1.getSignal();
+    cout<< signal1 << endl;
+    float signal2 = signalGen2.getSignal();
 
     
     ofDrawSphere(ofGetElapsedTimeMillis()/10, 200 + signal1*100, 2);

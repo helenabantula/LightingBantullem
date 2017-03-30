@@ -15,8 +15,9 @@
 
 enum colorState
 {
-    FixedColor,
-    FadingToColor
+    STATE_FIXED_COLOR,
+    STATE_FADING_TO_COLOR,
+    STATE_FOLLOW_INTENSITY
 };
 
 
@@ -37,6 +38,9 @@ class ColorLight: public Element {
         ofColor initialColor;
         float colorTimer;
         float colorFadeTime;
+    
+        int Amin;
+        int Amax;
     
         colorState myColorState;
     

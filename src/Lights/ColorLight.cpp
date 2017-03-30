@@ -42,29 +42,35 @@ ColorLight::ColorLight(string order):Element(order){
     if (pos>=0)
         i = &data[pos];
     
-    myColorState = FixedColor;
+    myColorState = STATE_FIXED_COLOR;
     myColor = ofColor(1,1,1);
 }
 
 
 void ColorLight::update(){
     
-    switch (myColorState) {
-            
-        case FixedColor:
-            
+    
+    switch (myColorState)
+    {
+        case STATE_FIXED_COLOR:
+            //generator.stop();
             break;
             
-        case FadingToColor:
+        case STATE_FADING_TO_COLOR:
             
             this->fadingToColor();
             
             break;
             
+        case STATE_FOLLOW_INTENSITY:
+            *i = ofMap(generator.getSignal(), 0, 1, Amin, Amax);
+            // *i = generator.getSignal();
+            break;
+            
         default:
             break;
     }
-    
+
     AssignMyColor();
 
 }
@@ -88,7 +94,7 @@ void ColorLight::fadingToColor(){
     myColor = lerpColor.lerp(targetColor, (colorTimer/colorFadeTime));
     
     if (colorTimer >= colorFadeTime)
-        myColorState = FixedColor;
+        myColorState = STATE_FIXED_COLOR;
 }
 
 
@@ -101,7 +107,7 @@ void ColorLight::SetColor(ofColor color, float fadeTime){
         targetColor = color;
         colorFadeTime = fadeTime;
         colorTimer = 0;
-        myColorState = FadingToColor;
+        myColorState = STATE_FADING_TO_COLOR;
     
     }
 }

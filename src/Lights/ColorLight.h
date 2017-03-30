@@ -17,7 +17,7 @@ enum colorState
 {
     STATE_FIXED_COLOR,
     STATE_FADING_TO_COLOR,
-    STATE_FOLLOW_INTENSITY
+    STATE_FOLLOW_COLOR_INTENSITY
 };
 
 
@@ -33,7 +33,9 @@ class ColorLight: public Element {
         float* a = 0;
     
     
-        ofColor myColor; // Color
+        ofColor myColor = ofColor(0,0,0); // Color
+        ofFloatColor* pointerToColor;
+    
         ofColor targetColor;
         ofColor initialColor;
         float colorTimer;
@@ -55,6 +57,8 @@ class ColorLight: public Element {
         void fadingToColor();
     
         //void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent);
+        void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent);
+
 
     
     

@@ -197,7 +197,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "SignalGenerator::update()"
+            landmarkName = "SignalGenerator::setParams(signalState signal, int frequency, int phase, float randomComponent, int Amin_, int Amax_)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -213,7 +213,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "SignalGenerator::update()"
+            landmarkName = "SignalGenerator::setParams(signalState signal, int frequency, int phase, float randomComponent, int Amin_, int Amax_)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -228,9 +228,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "SignalGenerator::update()"
-            landmarkType = "7">
+            endingLineNumber = "40">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -277,7 +275,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "SignalGenerator::update()"
+            landmarkName = "SignalGenerator::setParams(signalState signal, int frequency, int phase, float randomComponent, int Amin_, int Amax_)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -311,6 +309,70 @@
             endingLineNumber = "78"
             landmarkName = "Group::setIntensity(unsigned char targetI, float fadeTime, int elementIndex)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Lights/ColorLight.cpp"
+            timestampString = "512603078.324189"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "ColorLight::SetColor(ofColor color, float fadeTime)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Lights/ColorLight.h"
+            timestampString = "512604221.853142"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "class ColorLight"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Lights/ColorLight.h"
+            timestampString = "512604123.08294"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "class ColorLight"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Lights/ColorLight.h"
+            timestampString = "512604221.853142"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "class ColorLight"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

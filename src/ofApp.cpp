@@ -5,7 +5,7 @@ void ofApp::setup(){
     
     manager.setup();
     
-    manager.setGroupColor(0, ofColor(255,0,100));
+    //manager.setGroupColor(0, ofColor(255,5,100));
     //manager.setGroupColor(1, ofColor(150,140,3));
     
     mySignalState1 = STATE_SIN;
@@ -35,7 +35,7 @@ void ofApp::update(){
 void ofApp::draw(){
     
     float signal1 = signalGen1.getSignal();
-    cout<< signal1 << endl;
+    //cout<< signal1 << endl;
     float signal2 = signalGen2.getSignal();
 
     
@@ -56,12 +56,13 @@ void ofApp::keyPressed(int key){
     {
         if (key == 'r') {
 
-            manager.makeGroupFollow(0, 0, 255, STATE_TRIANGLE, 1, 0, 0.01);
+            //manager.makeGroupFollow(0, 0, 255, STATE_TRIANGLE, 1, 0, 0.01);
+            manager.setGroupColor(0, ofColor(255,100,19));
             
         }
         if (key == 'g'){
-            manager.setGroupColor(0, ofColor(0,0,255),2);
-            manager.setGroupIntensity(0, 0, 4);
+            manager.setGroupColor(0, ofColor(22,150,255));
+
         }
         
         isKeyReleased = false;

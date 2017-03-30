@@ -19,7 +19,7 @@ MovingLight::MovingLight(string order): ColorLight(order){
     if (pos>=0)
         t = &data[pos];
     
-    myColorState = FixedColor;
+    //myColorState = FixedColor;
     myColor = ofColor(1,1,1);
     
     myMovementState = FixedPosition;

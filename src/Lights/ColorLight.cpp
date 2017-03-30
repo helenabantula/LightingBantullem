@@ -58,18 +58,33 @@ void ColorLight::update(){
             
         case STATE_FADING_TO_COLOR:
             
-            this->fadingToColor();
+            //this->fadingToColor();
             
             break;
             
-        case STATE_FOLLOW_INTENSITY:
-            *i = ofMap(generator.getSignal(), 0, 1, Amin, Amax);
-            // *i = generator.getSignal();
+        case STATE_FOLLOW_COLOR_INTENSITY:
+        {
+            float hue = 0;  // The hue value to set.
+            float saturation = 0; // The saturation value to set.
+            float brightness = 0; // The brightness value to set.
+            myColor.getHsb(hue, saturation, brightness);
+            
+            brightness = generator.getSignal();
+            
+            myColor.setHsb(initialColor.getHue(), initialColor.getSaturation(), brightness);
+                        
             break;
+        }
             
         default:
             break;
     }
+    
+    //ofLog(OF_LOG_NOTICE, "R " <<fToString(myColor.r)+ " - " + "G " <<fToString(myColor.g)+ " - " + "B " <<fToString(myColor.b)+ " - "  + "A " <<fToString(myColor.a));
+    
+    ofLog() <<"R " << (int)myColor.r << " - " << "G " << (int)myColor.g << " - " << "B " << (int)myColor.b << " - "  << "A " << (int)myColor.a ;
+    //ofLog() <<"R " << newFloatColor.r << " - " << "G " << newFloatColor.g << " - " << "B " << newFloatColor.b  << " - "  << "A " << (int)myColor.a ;
+
 
     AssignMyColor();
 
@@ -82,32 +97,49 @@ void ColorLight::AssignMyColor()
     *b = myColor.b;
     if (this->i)
         *i = myColor.a;
+
 }
 
 
 void ColorLight::fadingToColor(){
     
-    ofColor lerpColor = initialColor;
+    //ofColor lerpColor = initialColor;
     
-    colorTimer += 1 / ofGetFrameRate();
+    //colorTimer += 1 / ofGetFrameRate();
     
-    myColor = lerpColor.lerp(targetColor, (colorTimer/colorFadeTime));
+    //myColor = lerpColor.lerp(targetColor, (colorTimer/colorFadeTime));
     
-    if (colorTimer >= colorFadeTime)
-        myColorState = STATE_FIXED_COLOR;
+    //ofFloatColor *a_color = & (ofFloatColor)myColor;
+//    ofFloatColor myColorFloat = (ofFloatColor)myColor;
+//    ofFloatColor myColor2 = myColorFloat;
+//    Tweenzor::add((ofFloatColor*)(&myColor), (ofFloatColor)myColor, (ofFloatColor)targetColor, 0.0, 10.0);
+    //Tweenzor::add(ofFloatColor* a_color, const ofFloatColor& c_begin, const ofFloatColor& c_end, float a_delay, float a_duration, int a_easeType=EASE_LINEAR, float a_p=0, float a_a=0);
+
+    
+//    if (colorTimer >= colorFadeTime)
+//        myColorState = STATE_FIXED_COLOR;
 }
 
 
 
 void ColorLight::SetColor(ofColor color, float fadeTime){
-    if (fadeTime == 0)
-        myColor = color;
-    else{
-        initialColor = myColor;
-        targetColor = color;
-        colorFadeTime = fadeTime;
-        colorTimer = 0;
-        myColorState = STATE_FADING_TO_COLOR;
     
-    }
+    
+//    myColor = color;
+
+     pointerToColor = (ofFloatColor*)&myColor;
+    //ofFloatColor* pointerToColor = &newFloatColor;
+    
+    Tweenzor::add(pointerToColor, (ofFloatColor)myColor, (ofFloatColor)color, 0.0, fadeTime);
+    
+    //myColor = (ofColor)newFloatColor;
+
 }
+
+void ColorLight::FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent)
+{
+    initialColor = myColor;
+    myColorState = STATE_FOLLOW_COLOR_INTENSITY;
+    generator.setParams(signal, freq, phase, randomComponent,Amin, Amax);
+}
+

@@ -20,14 +20,14 @@ void LightManager::setup()
     int numGroups = 4;
     groups.resize(numGroups);
     
-    groups[0].AddElement(LIGHT_SINGLECHANNEL,1,"I");
-    groups[0].setInitChannel(1);
-    groups[1].AddElement(LIGHT_COLOR,5,"IRGB");
-    groups[1].setInitChannel(50);
-    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
-    groups[3].AddElement(LIGHT_SINGLECHANNEL,3);
-    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
-    groups[3].AddElement(LIGHT_MOVINGHEAD,3, "RGBPT");
+    groups[0].AddElement(LIGHT_COLOR,1,"RGB");
+//    groups[0].setInitChannel(1);
+//    groups[1].AddElement(LIGHT_COLOR,5,"IRGB");
+//    groups[1].setInitChannel(50);
+//    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
+//    groups[3].AddElement(LIGHT_SINGLECHANNEL,3);
+//    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
+//    groups[3].AddElement(LIGHT_MOVINGHEAD,3, "RGBPT");
 
 
 }

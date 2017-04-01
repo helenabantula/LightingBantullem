@@ -12,7 +12,7 @@
 ColorLight::ColorLight(string order):Element(order){
     
 
-    data[0] = 200;          //per poder distingir quan començo un nou element al vector DMX de tothom (a LightManager)
+    //data[0] = 200;          //per poder distingir quan començo un nou element al vector DMX de tothom (a LightManager)
     
     int pos = order.find('R');
     if (pos>=0)
@@ -109,9 +109,16 @@ void ColorLight::SetColor(ofColor color, float fadeTime){
     float initColorG = *g;
     float initColorB = *b;
     
-    Tweenzor::add(r,initColorR , color.r, 0.0, fadeTime);
-    Tweenzor::add(g,initColorG , color.g, 0.0, fadeTime);
-    Tweenzor::add(b,initColorB , color.b, 0.0, fadeTime);
+    
+    Tweenzor::add(r,initColorR , color.r, 0.0, fadeTime, EASE_LINEAR);
+    Tweenzor::add(g,initColorG , color.g, 0.0, fadeTime, EASE_LINEAR);
+    Tweenzor::add(b,initColorB , color.b, 0.0, fadeTime, EASE_LINEAR);
+    
+    Tweenzor::getTween(r) -> setRepeat(1,true);
+    Tweenzor::getTween(g) -> setRepeat(1,true);
+    Tweenzor::getTween(b) -> setRepeat(1,true);
+
+    
 
 }
 

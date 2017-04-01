@@ -34,12 +34,9 @@ class ColorLight: public Element {
     
     
         ofColor myColor = ofColor(0,0,0); // Color
-        ofFloatColor* pointerToColor;
     
-        ofColor targetColor;
         ofColor initialColor;
-        float colorTimer;
-        float colorFadeTime;
+    
     
         int Amin;
         int Amax;
@@ -54,9 +51,7 @@ class ColorLight: public Element {
         virtual void update();
         void AssignMyColor();
         void SetColor(ofColor color, float fadeTime);
-        void fadingToColor();
-    
-        //void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent);
+
         void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent);
 
 

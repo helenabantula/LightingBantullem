@@ -57,11 +57,11 @@ void ofApp::keyPressed(int key){
         if (key == 'r') {
 
             //manager.makeGroupFollow(0, 0, 255, STATE_TRIANGLE, 1, 0, 0.01);
-            manager.setGroupColor(0, ofColor(255,100,19));
+            manager.setGroupColor(0, ofColor(255,100,19), 3);
             
         }
         if (key == 'g'){
-            manager.setGroupColor(0, ofColor(22,150,255));
+            manager.setGroupColor(0, ofColor(22,150,255), 3);
 
         }
         

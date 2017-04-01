@@ -73,6 +73,21 @@ void Group::setColor(ofColor color, float fadeTime, int elementIndex)
 }
 
 
+void Group::makeElementsBeatColor(ofColor color, float fadeTime, ofColor baseColor, int elementIndex)
+{
+    if (elementIndex == -1){    // Everyone
+        for(int i = 0; i < elements.size(); i++)
+        {
+            elements[i]->BeatColor(color, fadeTime, baseColor);
+        }
+    }
+    else{                       // Just a single one
+        elements[elementIndex]->BeatColor(color, fadeTime, baseColor);
+    }
+
+}
+
+
 void Group::setIntensity(unsigned char targetI,  float fadeTime, int elementIndex){
     
     if (elementIndex == -1){    // Everyone
@@ -88,10 +103,13 @@ void Group::setIntensity(unsigned char targetI,  float fadeTime, int elementInde
 
 void Group::makeElementsFollow(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent, int elementIndex)
 {
+    int myPhase = 0;
+    
     if (elementIndex == -1){    // Everyone
         for(int i = 0; i < elements.size(); i++)
         {
-            elements[i]->FollowSignal( Amin, Amax, signal, freq, phase, randomComponent);
+            elements[i]->FollowSignal( Amin, Amax, signal, freq, myPhase, randomComponent);
+            myPhase +=45;
         }
     }
     else{                       // Just a single one

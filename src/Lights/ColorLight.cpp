@@ -58,6 +58,10 @@ void ColorLight::update(){
             
         case STATE_FADING_TO_COLOR:
             
+            myColor.r = *r;
+            myColor.g = *g;
+            myColor.b = *b;
+            
             break;
             
         case STATE_FOLLOW_COLOR_INTENSITY:
@@ -84,7 +88,7 @@ void ColorLight::update(){
     float initColorG = *g;
     float initColorB = *b;
     
-    ofLog() <<"R " << initColorR << " - " << "G " << initColorG << " - " << "B " << initColorB << " - "  << "A " << (int)myColor.a ;
+    //ofLog() <<"R " << initColorR << " - " << "G " << initColorG << " - " << "B " << initColorB << " - "  << "A " << (int)myColor.a ;
     //////////////////////////////////////
 }
 
@@ -103,6 +107,7 @@ void ColorLight::AssignMyColor()
 
 void ColorLight::SetColor(ofColor color, float fadeTime){
     
+    
     myColorState = STATE_FADING_TO_COLOR;
 
     float initColorR = *r;
@@ -114,13 +119,28 @@ void ColorLight::SetColor(ofColor color, float fadeTime){
     Tweenzor::add(g,initColorG , color.g, 0.0, fadeTime, EASE_LINEAR);
     Tweenzor::add(b,initColorB , color.b, 0.0, fadeTime, EASE_LINEAR);
     
+
+}
+
+void ColorLight::BeatColor(ofColor color, float fadeTime, ofColor baseColor)
+{
+    myColorState = STATE_FADING_TO_COLOR;
+    
+    //float initColorR = *r;
+    //float initColorG = *g;
+    //float initColorB = *b;
+    
+    
+    Tweenzor::add(r,baseColor.r , color.r, 0.0, fadeTime, EASE_LINEAR);
+    Tweenzor::add(g,baseColor.g , color.g, 0.0, fadeTime, EASE_LINEAR);
+    Tweenzor::add(b,baseColor.b , color.b, 0.0, fadeTime, EASE_LINEAR);
+    
     Tweenzor::getTween(r) -> setRepeat(1,true);
     Tweenzor::getTween(g) -> setRepeat(1,true);
     Tweenzor::getTween(b) -> setRepeat(1,true);
 
-    
-
 }
+
 
 
 void ColorLight::FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent)

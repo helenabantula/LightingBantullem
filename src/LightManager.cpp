@@ -17,17 +17,17 @@ void LightManager::setup()
     
     Tweenzor::init();
     
-    int numGroups = 1;
+    int numGroups = 4;
     groups.resize(numGroups);
     
     groups[0].AddElement(LIGHT_COLOR,1,"RGB");
-//    groups[0].setInitChannel(1);
-//    groups[1].AddElement(LIGHT_COLOR,5,"IRGB");
-//    groups[1].setInitChannel(50);
-//    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
-//    groups[3].AddElement(LIGHT_SINGLECHANNEL,3);
-//    groups[2].AddElement(LIGHT_SINGLECHANNEL,5, "I");
-//    groups[3].AddElement(LIGHT_MOVINGHEAD,3, "RGBPT");
+    groups[1].AddElement(LIGHT_COLOR,1,"RGB");
+    groups[2].AddElement(LIGHT_COLOR,1,"RGB");
+    groups[3].AddElement(LIGHT_COLOR,4,"RGBIS");
+    
+    groups[3].setInitChannel(50);
+
+
 
 
 }
@@ -61,6 +61,13 @@ void LightManager::setGroupColor(int groupIndex, ofColor color, float fadeTime, 
 {
     groups[groupIndex].setColor(color, fadeTime, elementIndex);
 }
+
+void LightManager::makeGroupBeatColor(int groupIndex, ofColor color, ofColor baseColor, float fadeTime,  int elementIndex)
+{
+    groups[groupIndex].makeElementsBeatColor(color, fadeTime, baseColor, elementIndex);
+
+}
+
 
 
 void LightManager::setGroupIntensity(int groupIndex, unsigned char targetI, float fadeTime, int elementIndex)

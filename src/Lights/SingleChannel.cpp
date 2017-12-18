@@ -50,7 +50,7 @@ void SingleChannel::SetIntensity(float targetI, float fadeTime){
 }
 
 
-void SingleChannel::FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent)
+void SingleChannel::FollowSignal(int Amin, int Amax, signalState signal, float freq, int phase, float randomComponent)
 {
 
     

@@ -20,7 +20,7 @@ void LightManager::setup()
     int numGroups = 1;
     groups.resize(numGroups);
     
-    groups[0].AddElement(LIGHT_COLOR,1,"RGB");
+    groups[0].AddElement(LIGHT_COLOR,2,"RGB");
 //    groups[0].setInitChannel(1);
 //    groups[1].AddElement(LIGHT_COLOR,5,"IRGB");
 //    groups[1].setInitChannel(50);
@@ -68,7 +68,7 @@ void LightManager::setGroupIntensity(int groupIndex, unsigned char targetI, floa
     groups[groupIndex].setIntensity(targetI, fadeTime, elementIndex);
 }
 
-void LightManager::makeGroupFollow(int groupIndex, int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent, int elementIndex)
+void LightManager::makeGroupFollow(int groupIndex, int Amin, int Amax, signalState signal, float freq, int phase, float randomComponent, int elementIndex)
 {
     groups[groupIndex].makeElementsFollow( Amin,  Amax,  signal,  freq,  phase,  randomComponent,  elementIndex );
 }

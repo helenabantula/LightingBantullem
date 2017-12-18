@@ -39,7 +39,7 @@ public:
     
     signalState mySignalState;
     
-    int myFreq;
+    float myFreq;
     int myPhase;
     float mySignal = 0;
     
@@ -48,7 +48,7 @@ public:
     int Amin, Amax;
     
     
-    void setParams(signalState signal, int frequency, int phase, float randomComponent, int Amin = 0, int Amax = 255);
+    void setParams(signalState signal, float frequency, int phase, float randomComponent, int Amin = 0, int Amax = 255);
     
 
 

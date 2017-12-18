@@ -27,7 +27,7 @@
 //}
 
 
-void SignalGenerator::setParams(signalState signal, int frequency, int phase, float randomComponent, int Amin_, int Amax_)
+void SignalGenerator::setParams(signalState signal, float frequency, int phase, float randomComponent, int Amin_, int Amax_)
 {
     mySignalState = signal;
     myFreq = frequency;
@@ -48,14 +48,14 @@ void SignalGenerator::update()
             
         case STATE_SIN: {
             
-            mySignal = (sin(myFreq*timer+myPhase)/2)+0.5 + myRandom;
+            mySignal = (sin(2*3.14*myFreq*timer+myPhase)/2)+0.5 + myRandom;
             
             break;
         }
             
         case STATE_COS: {
             
-            mySignal = (cos(myFreq*timer+myPhase)/2)+0.5 + myRandom;
+            mySignal = (cos(2*3.14*myFreq*timer+myPhase)/2)+0.5 + myRandom;
             
             break;
         }

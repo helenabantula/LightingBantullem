@@ -84,7 +84,7 @@ void ColorLight::update(){
     float initColorG = *g;
     float initColorB = *b;
     
-    ofLog() <<"R " << initColorR << " - " << "G " << initColorG << " - " << "B " << initColorB << " - "  << "A " << (int)myColor.a ;
+    //ofLog() <<"R " << initColorR << " - " << "G " << initColorG << " - " << "B " << initColorB << " - "  << "A " << (int)myColor.a ;
     //////////////////////////////////////
 }
 
@@ -123,7 +123,7 @@ void ColorLight::SetColor(ofColor color, float fadeTime){
 }
 
 
-void ColorLight::FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent)
+void ColorLight::FollowSignal(int Amin, int Amax, signalState signal, float freq, int phase, float randomComponent)
 {
     initialColor = myColor;
     myColorState = STATE_FOLLOW_COLOR_INTENSITY;

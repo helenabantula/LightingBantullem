@@ -17,7 +17,7 @@
 class ArtnetSender{
     public:
     
-        string machineIP = "192.168.2.118";
+        string machineIP = "192.168.2.5";
         string enttecIP = "192.168.2.100";        // ho haure de convertir a punter de char (*char)
     
         //Constructor - destructor

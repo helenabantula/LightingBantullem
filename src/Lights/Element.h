@@ -55,7 +55,7 @@ class Element{
         virtual void update(){};
         virtual void SetIntensity(unsigned char targetI, float fadeTime){};
     
-        virtual void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent){};
+        virtual void FollowSignal(int Amin, int Amax, signalState signal, float freq, int phase, float randomComponent){};
 
     
     

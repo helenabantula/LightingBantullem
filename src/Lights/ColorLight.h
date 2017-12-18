@@ -52,7 +52,7 @@ class ColorLight: public Element {
         void AssignMyColor();
         void SetColor(ofColor color, float fadeTime);
 
-        void FollowSignal(int Amin, int Amax, signalState signal, int freq, int phase, float randomComponent);
+        void FollowSignal(int Amin, int Amax, signalState signal, float freq, int phase, float randomComponent);
 
 
     
